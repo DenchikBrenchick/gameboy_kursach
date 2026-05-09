@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_white"
+    tools:context=".ui.MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_screen_shape"
+            android:paddingTop="12dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvDotMatrix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="DOT MATRIX WITH STEREO SOUND"
+                android:textColor="#1E1E1E"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvBattery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="BATTERY"
+                android:textColor="#1E1E1E"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDotMatrix" />
+
+            <View
+                android:id="@+id/batteryIndicator"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/ic_led_dot"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBattery" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="#9BBC0F"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintDimensionRatio="20:25"
+                app:layout_constraintTop_toBottomOf="@+id/batteryIndicator"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/tvMenuPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  PLAY"
+                    android:textSize="24sp"
+                    android:textColor="#0F380F"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:id="@+id/tvMenuProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  PROFILE"
+                    android:textSize="24sp"
+                    android:textColor="#0F380F"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:id="@+id/tvMenuRecords"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  RECORDS"
+                    android:textSize="24sp"
+                    android:textColor="#0F380F"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/logoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nintendo GAME BOY™"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <FrameLayout
+                android:id="@+id/dPadBase"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/ic_dpad"
+                app:layout_constraintBottom_toTopOf="@+id/btnStartContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.3">
+
+                <View android:id="@+id/btnUp" android:layout_width="50dp" android:layout_height="50dp" android:layout_gravity="top|center_horizontal" />
+                <View android:id="@+id/btnDown" android:layout_width="50dp" android:layout_height="50dp" android:layout_gravity="bottom|center_horizontal" />
+                <View android:id="@+id/btnLeft" android:layout_width="50dp" android:layout_height="50dp" android:layout_gravity="start|center_vertical" />
+                <View android:id="@+id/btnRight" android:layout_width="50dp" android:layout_height="50dp" android:layout_gravity="end|center_vertical" />
+            </FrameLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/actionButtonsContainer"
+                android:layout_width="120dp"
+                android:layout_height="110dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/dPadBase"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dPadBase">
+
+                <FrameLayout
+                    android:id="@+id/btnActionB"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:background="@drawable/ic_btn_round"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="B"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+                <FrameLayout
+                    android:id="@+id/btnActionA"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ic_btn_round"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="A"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/btnStartContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:rotation="-8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dPadBase"
+                app:layout_constraintVertical_bias="0.5">
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:layout_marginEnd="16dp">
+                    <View android:id="@+id/btnSelect" android:layout_width="50dp" android:layout_height="15dp" android:background="@drawable/ic_btn_oval" android:clickable="true" android:focusable="true" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MENU" android:textSize="10sp" android:textStyle="bold" android:textColor="#333333" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:layout_marginStart="16dp">
+                    <View android:id="@+id/btnOptions" android:layout_width="50dp" android:layout_height="15dp" android:background="@drawable/ic_btn_oval" android:clickable="true" android:focusable="true" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OPTIONS" android:textSize="10sp" android:textStyle="bold" android:textColor="#333333" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        
+        <ImageView
+            android:id="@+id/imgSpeakerHoles"
+            android:layout_width="70dp"
+            android:layout_height="63dp"
+            android:src="@drawable/ic_speaker_holes"
+            android:alpha="0.8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</FrameLayout>
