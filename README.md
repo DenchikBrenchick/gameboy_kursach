@@ -17,4 +17,4 @@
 [Завантажити APK](https://github.com/DenchikBrenchick/gameboy_kursach/releases/tag/V1.0)
 
 ## Технології
-- Kotlin · Android SDK · Canvas API · Room (SQLite)
+- Kotlin · Android SDK · Room (SQLite)
