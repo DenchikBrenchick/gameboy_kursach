@@ -14,7 +14,7 @@
 - Локальна база даних рекордів (Room SQLite)
 
 ## Встановлення
-[Завантажити APK](https://github.com/DenchikBrenchick/gameboy-android/releases/latest)
+[Завантажити APK](https://github.com/DenchikBrenchick/gameboy_kursach/releases/tag/V1.0)
 
 ## Технології
 - Kotlin · Android SDK · Canvas API · Room (SQLite)
